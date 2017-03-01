@@ -19,7 +19,7 @@ __email__ = "hitmaxtom@gmail.com"
 
 def talker():
     rospy.init_node('kitti_pub', anonymous=True)
-    pub = rospy.Publisher('cloud', PointCloud2, queue_size=10)
+    pub = rospy.Publisher('/kitti_odom/cloud', PointCloud2, queue_size=10)
     rate = rospy.Rate(10)
     header = std_msgs.msg.Header()
     header.frame_id = 'base_link'
@@ -62,7 +62,11 @@ def talker():
         # Publish cloud
         pub.publish(cloud)
         id=id+1
+        if id > 4500:
+            break
         rate.sleep()
+        
+    rospy.loginfo("done loop")
 
 if __name__ == '__main__':
     try:
