@@ -62,7 +62,7 @@ def talker():
         # Publish cloud
         pub.publish(cloud)
         id=id+1
-        if id > 4500:
+        if id > 4490:
             break
         rate.sleep()
         
