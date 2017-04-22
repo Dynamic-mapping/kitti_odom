@@ -25,7 +25,8 @@ def talker():
     header.frame_id = 'base_link'
 
     # Change this to the directory where you store KITTI data
-    basedir = '/home/i/Documents/Kitti/dataset/'
+    basedir = '/raid/hustxly/Kitti/velodyne/dataset/'
+
 
     # Specify the dataset to load
     sequence = '00'
