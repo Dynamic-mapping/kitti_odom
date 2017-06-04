@@ -13,6 +13,8 @@ import sensor_msgs.point_cloud2 as pcl2
 import matplotlib.pyplot as plt
 import numpy as np
 from odometry import odome
+from glob import glob
+import os, sys
 
 __author__ = "maxtom"
 __email__ = "hitmaxtom@gmail.com"
@@ -25,14 +27,15 @@ def talker():
     header.frame_id = 'base_link'
 
     # Change this to the directory where you store KITTI data
-    basedir = '/raid/hustxly/Kitti/velodyne/dataset/'
-
+    basedir = '/DATA/KITTI/odometry/dataset'
 
     # Specify the dataset to load
     sequence = '00'
+
+    files = glob(os.path.join(basedir, "sequence/", sequence, "/velodyne/*.bin"))
     
     # Optionally, specify the frame range to load
-    frame_range = range(0, 4500, 1)
+    frame_range = range(5, len(files)-5, 1)
     
     # Load the data
     # dataset = pykitti.odometry(basedir, sequence)
