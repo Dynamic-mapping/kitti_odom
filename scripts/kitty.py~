@@ -27,10 +27,11 @@ def talker():
     header.frame_id = 'base_link'
 
     # Change this to the directory where you store KITTI data
-    basedir = '/DATA/KITTI/odometry/dataset/'
+    basedir = '/DATA/KITTI/odometry/dataset
+'
 
     # Specify the dataset to load
-    sequence = '00'
+    sequence = '10'
 
     files = glob(os.path.join(basedir, "sequence/", sequence, "/velodyne/*.bin"))
     
@@ -66,7 +67,7 @@ def talker():
         # Publish cloud
         pub.publish(cloud)
         id=id+1
-        if id > 6000:
+        if id > 4490:
             break
         rate.sleep()
         
