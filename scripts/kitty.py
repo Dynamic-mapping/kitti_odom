@@ -30,7 +30,7 @@ def talker():
     basedir = '/DATA/KITTI/odometry/dataset/'
 
     # Specify the dataset to load
-    sequence = '00'
+    sequence = '09'
 
     files = glob(os.path.join(basedir, "sequence/", sequence, "/velodyne/*.bin"))
     

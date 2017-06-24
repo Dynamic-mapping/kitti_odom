@@ -4,7 +4,6 @@
 	<node pkg="tf" type="static_transform_publisher" name="tf_br_b_c" args="0 0 0 -1.5707963 0 -1.5707963 world cam_world 100"/>
 	<node pkg="tf" type="static_transform_publisher" name="tf_br_c_b" args="0 0 0 0 -1.5707963 1.5707963  cam   base_link 100"/>
 	<node pkg="kitti_odom" type="kitty.py" name="kitti_odom"  output="screen"/>
-	<include file="$(find doom)/launch/loam.launch"/>
 
 	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find kitti_odom)/rviz/kitti.rviz" />
 </launch>
